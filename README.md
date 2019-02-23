@@ -102,3 +102,8 @@ html+javascriptで検索文字列を渡し受け取って描画。
 
 
 
+## LICENSE
+
+このソフトウェアはMITライセンスの下でリリースされています。LICENSE.txtをご覧ください。
+
+This software is released under the MIT License, see LICENSE.txt.
