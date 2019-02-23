@@ -1,0 +1,63 @@
+* {
+  color: #222;
+  font-family: verdana,arial,sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 0 0.3em;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+h1 {
+  font-size: x-large;
+  background-color: lightgray;
+  border-radius: 0.3em;
+  padding: 0.1em;
+  text-align: center;
+  color: dimgray;
+  margin-bottom: 1.18em;
+}
+
+input[type=text]#searchWord {
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  border: 1px solid darkgray;
+  min-width: 97%;
+  margin: 0 auto 1.18em auto;
+  display: block;
+  padding: 0.3em;
+}
+
+div#searchCount {
+  font-size: small;
+  color: #808080;
+  margin-bottom: 1.18em;
+}
+
+div#searchResult {
+  margin-bottom: 1.18em;
+}
+
+table {
+  border: 1px solid darkgray;
+  border-radius: 0.2em;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table tr td {
+  border-right: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+  padding: 0.3em;
+}
+table tr:last-child td {
+  border-bottom-width: 0;
+}
+table tr td:last-child {
+  border-right-width: 0;
+}
