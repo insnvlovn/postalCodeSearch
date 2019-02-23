@@ -61,6 +61,7 @@ grepと比べ遅いが完全マッチでなくともヒットする。
 http://php.net/manual/ja/event.examples.php
 
 > 例8 Simple HTTP server
+
 を参照のこと。
 
     sh bin/postalCodeSearch.sh restart
@@ -100,7 +101,11 @@ http://php.net/manual/ja/event.examples.php
 
 html+javascriptで検索文字列を渡し受け取って描画。
 
+    htdocs/index.html
+    htdocs/js/postalCodeSearch.js
+    htdocs/css/postalCodeSearch.css
 
+apiにはlimitもある。デフォルト値は10。サンプルにはlimitを渡す機能は無い。
 
 ## LICENSE
 
