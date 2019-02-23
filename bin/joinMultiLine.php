@@ -44,7 +44,6 @@ while (($data = fgetcsv($fp, 10000, ",")) !== false) {
             } elseif ($townStartFlag) {
                 $multiLineMode = MULTI_LINE_TOWN;
             } elseif ($kanaStartFlag) {
-                //$multiLineMode = MULTI_LINE_KANA;
                 trigger_error("analyze error.", E_USER_ERROR);
             } else {
                 // resume

@@ -57,14 +57,6 @@ class AddressDto {
         $this->col14 = $data[14];
     }
 
-    // public function __set($name, $value) {
-    //     $this->$name = $value;
-    // }
-
-    // public function __get($name) {
-    //     return $this->$name;
-    // }
-
     public function isMultiRowTown(AddressDto $address) {
         $arr1 = get_object_vars($this);
         $arr2 = get_object_vars($address);

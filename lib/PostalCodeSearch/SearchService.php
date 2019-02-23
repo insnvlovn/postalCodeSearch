@@ -4,9 +4,6 @@ require_once("AddressDto.php");
 
 class SearchService {
 
-    public static function decodeCacheKey($word) {
-        return substr($word, 1);
-    }
     public static function encodeCacheKey($word) {
         return "@{$word}";
     }
@@ -60,7 +57,6 @@ class SearchService {
                     }
                 }
             } else {
-                // 検索ワード2つ目以降はAND演算
                 $tmpScoreList = [];
                 foreach ($wordList as $word) {
                     $cacheKey = SearchService::encodeCacheKey($word);
@@ -114,9 +110,7 @@ class SearchService {
             fseek($fp, $fileInfo[$pkey]["firstOffset"]);
             $data = fgetcsv($fp, $lastOffset - $firstOffset);
 
-            //var_dump(basename(__FILE__), __LINE__);
             $address = new AddressDto($data);
-            //var_dump(basename(__FILE__), __LINE__);
             $address->setPkey($pkey);
             $address->setFirstOffset($firstOffset);
             $address->setLastOffset($lastOffset);

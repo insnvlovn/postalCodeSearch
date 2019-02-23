@@ -25,8 +25,6 @@ $(function(){
     var startTime = new Date();
     var searchWordList = word.split(/\s+/);
     var data = "";
-    //var data = "limit=1000";
-    //console.log(searchWordList);
     $.each(searchWordList, function(index, value) {
       if (value.length < 2) {
         return true;
@@ -35,16 +33,12 @@ $(function(){
         data += "&";
       }
       data += "s" + encodeURI("[]") + "=" + encodeURI(value);
-      //console.log(data);
     });
     $.ajax({
       type: "GET",
       url: "http://192.168.0.110:8010/",
       data: data,
       success: function(json) {
-        //console.log("executeCnt", ++executeCnt);
-        //console.log("count", json.count);
-        //console.log("data", JSON.stringify(json.data));
         var endTime = new Date();
         var executeTime = ((endTime - startTime) / 1000).toFixed(3);
         searchCountElem.text((new Intl.NumberFormat).format(json.count) + " 件 (" + executeTime + "秒)");
@@ -57,7 +51,6 @@ $(function(){
   searchWordElem.autocomplete({
     delay: 0,
     source: function(request, response) {
-      //console.log(searchWordElem.val(), request, response);
       if (timeoutId) {
         clearTimeout(timeoutId);
         delete timeoutId;

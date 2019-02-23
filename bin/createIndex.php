@@ -12,18 +12,12 @@ $searchInfo = [];
 
 $firstOffset = 0;
 $lastOffset = 0;
-$prevAddress = null;
 
 $fp = fopen($csvFile, "r");
 $pkey = 0;
 
 while (($data = fgetcsv($fp, 10000, ",")) !== false) {
     $lastOffset = ftell($fp);
-
-    $address = new AddressDto($data);
-    $address->setPkey($pkey);
-    $address->setFirstOffset($firstOffset);
-    $address->setLastOffset($lastOffset);
 
     $wordList = [];
     foreach ($data as $key => $val) {
@@ -34,14 +28,12 @@ while (($data = fgetcsv($fp, 10000, ",")) !== false) {
         $cacheKey = SearchService::encodeCacheKey($word);
         $searchInfo[$cacheKey][$pkey] = true;
     }
-    //var_dump($data, $wordList);
 
     $fileInfo[$pkey] = [
         "firstOffset" => $firstOffset,
         "lastOffset" => $lastOffset,
     ];
 
-    $prevAddress = $address;
     $firstOffset = $lastOffset;
     $pkey++;
 }

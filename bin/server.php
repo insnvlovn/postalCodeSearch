@@ -3,13 +3,6 @@
 require_once("SearchQueryDto.php");
 require_once("SearchService.php");
 
-set_error_handler(function($severity, $message, $file, $line) {
-    throw new ErrorException($message, 0, $severity, $file, $line);
-});
-spl_autoload_register(function($class) {
-    trigger_error("$class not loaded.", E_USER_ERROR);
-});
-
 ini_set("memory_limit", "1024M");
 
 call_user_func(function() {
@@ -34,11 +27,7 @@ function _http_default($req) {
 
         $searchQuery = new SearchQueryDto($query);
 
-        //echo "Output headers:"; var_dump($req->getOutputHeaders(), $query, $searchQuery);
-
         $scoreList = SearchService::search($searchQuery->getSearchWordList(), $searchInfo);
-
-        //var_dump($scoreList);
 
         $cntAll = count($scoreList);
 
@@ -57,8 +46,6 @@ function _http_default($req) {
             "data" => $result,
         ];
         $jsonString = json_encode($json, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-        //echo "Output headers:"; var_dump($json);
 
         $buf = new EventBuffer();
         $buf->add($jsonString);
