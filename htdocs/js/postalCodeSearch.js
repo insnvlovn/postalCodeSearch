@@ -4,6 +4,7 @@ $(function(){
   var searchWordElem = $("#searchWord");
   var searchCountElem = $("#searchCount");
   var searchResultElem = $("#searchResult");
+  var apiUrl = "http://" + document.domain + ":8010/";
 
   var displayTable = function(data) {
     var tableElem = $("<table/>");
@@ -36,7 +37,7 @@ $(function(){
     });
     $.ajax({
       type: "GET",
-      url: "http://192.168.0.110:8010/",
+      url: apiUrl,
       data: data,
       success: function(json) {
         var endTime = new Date();
