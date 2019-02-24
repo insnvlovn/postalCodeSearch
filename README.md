@@ -4,25 +4,6 @@
 
 https://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html
 
-## 実行環境
-
-    gentoo linux
-    
-    $ uname -a
-    Linux vmware-gentoo1 4.14.52-gentoo #1 SMP Sat Jul 14 18:03:25 JST 2018 x86_64 Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz GenuineIntel GNU/Linux
-    
-    $ php -v
-    PHP 7.3.2 (cli) (built: Feb 18 2019 00:26:00) ( NTS )
-    Copyright (c) 1997-2018 The PHP Group
-    Zend Engine v3.3.2, Copyright (c) 1998-2018 Zend Technologies
-        with Zend OPcache v7.3.2, Copyright (c) 1999-2018, by Zend Technologies
-    
-    dev-php/pecl-event-2.4.3
-
-postalCodeSearch.shを実行する場合、PECLのeventモジュールが必要です。
-
-http://php.net/manual/ja/event.installation.php
-
 
 ## 初期設定
 
@@ -126,6 +107,29 @@ html+javascriptで検索文字列を渡し受け取って描画。
     htdocs/css/postalCodeSearch.css
 
 apiにはlimitもある。デフォルト値は10。サンプルにはlimitを渡す機能は無い。
+
+
+
+## 実行環境
+
+    gentoo linux
+    
+    $ uname -a
+    Linux vmware-gentoo1 4.14.52-gentoo #1 SMP Sat Jul 14 18:03:25 JST 2018 x86_64 Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz GenuineIntel GNU/Linux
+    
+    $ php -v
+    PHP 7.3.2 (cli) (built: Feb 18 2019 00:26:00) ( NTS )
+    Copyright (c) 1997-2018 The PHP Group
+    Zend Engine v3.3.2, Copyright (c) 1998-2018 Zend Technologies
+        with Zend OPcache v7.3.2, Copyright (c) 1999-2018, by Zend Technologies
+    
+    dev-php/pecl-event-2.4.3
+
+postalCodeSearch.shを実行する場合、PECLのeventモジュールが必要です。
+
+http://php.net/manual/ja/event.installation.php
+
+
 
 ## LICENSE
 
